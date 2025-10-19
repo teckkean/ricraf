@@ -1,0 +1,170 @@
+{
+  "metadata": {
+    "identifier": {
+      "doi": "10.5281/zenodo.17379392",
+      "local_id": "RICRAF_VIC_2025_v1.0"
+    },
+    "title": "Fused Geospatial Dataset of Road Infrastructure and Climate Hazards for Victoria, Australia",
+    "description": {
+      "abstract": "A fused dataset combining road infrastructure attributes (traffic volume, pavement condition, road configuration) with climate hazard indicators (extreme rainfall, temperature extremes, drought indices) for climate risk assessment in Victoria, Australia. Harmonised to GDA94 / VicGrid (EPSG:3111) for road-link-level analysis.",
+      "keywords": [
+        "climate hazard",
+        "road infrastructure",
+        "geospatial dataset",
+        "risk assessment",
+        "data fusion",
+        "global warming levels",
+        "fair data",
+        "victoria australia"
+      ],
+      "purpose": "Support transport network vulnerability assessments, infrastructure adaptation planning, and climate risk modelling."
+    },
+    "contact": {
+      "creator": [
+        {
+          "name": "Chin, Teck Kean",
+          "organization": "Monash University",
+          "role": "creator"
+        },
+        {
+          "name": "Prakash, Mahesh",
+          "organization": "Data61, CSIRO",
+          "role": "contributor"
+        },
+        {
+          "name": "Zheng, Nan",
+          "organization": "Monash University",
+          "role": "contributor"
+        },
+        {
+          "name": "Pauwels, Valentijn R.N.",
+          "organization": "Monash University",
+          "role": "contributor"
+        }
+      ],
+      "publisher": "Zenodo",
+      "contact_point": {
+        "name": "Teck Kean Chin"
+      }
+    },
+    "temporal": {
+      "coverage": {
+        "road_data": "2020",
+        "climate_projections": ["GWL-1.2°C", "GWL-1.5°C", "GWL-2.0°C", "GWL-3.0°C"],
+        "temporal_extent": {
+          "begin": "2010-01-01",
+          "end": "2099-12-31"
+        }
+      }
+    },
+    "spatial": {
+      "coverage": {
+        "name": "Victoria, Australia",
+        "bounding_box": {
+          "west": 141.0,
+          "east": 150.0,
+          "south": -39.0,
+          "north": -34.0
+        },
+        "crs": {
+          "name": "GDA94 / VicGrid",
+          "authority": "EPSG:3111"
+        },
+        "geometry_type": "LineString"
+      }
+    },
+    "data_quality": {
+      "lineage": {
+        "statement": "Data fused from DataVic road datasets and Australian Climate Service hazard indices using spatial joins and nearest-neighbor imputation. Processed with Python 3.12 and GeoPandas 1.0.1.",
+        "processing_steps": [
+          "CRS normalisation to EPSG:3111",
+          "Schema harmonisation",
+          "Spatial fusion and aggregation",
+          "Zonal statistics for climate attributes",
+          "Nearest-neighbor imputation for missing values",
+          "Topology validation (0 invalid geometries)"
+        ],
+        "software": [
+          {"name": "GeoPandas", "version": "1.0.1"},
+          {"name": "Pandas", "version": "2.2.3"},
+          {"name": "Python", "version": "3.12"}
+        ]
+      },
+      "validation": {
+        "metrics": {
+          "record_count": 7579,
+          "null_counts": 0,
+          "invalid_geometries": 0,
+          "mae_rainfall": "0.00 mm"
+        },
+        "methods": [
+          "Topology validation (Shapely)",
+          "Range checks",
+          "Cross-validation against raw sources (100 samples)",
+          "Schema validation"
+        ]
+      },
+      "limitations": [
+        "Static road snapshot (2020)",
+        "Climate interpolation uncertainty",
+        "Edge effects near state boundaries",
+        "Potential double-counting of bidirectional roads"
+      ]
+    },
+    "distribution": {
+      "main_file": "gdf_road_clim_cln_final_withfuture.geojson",
+      "format": "GeoJSON",
+      "size": "28 MB",
+      "license": {
+        "name": "CC-BY-4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "access": {
+        "doi": "10.5281/zenodo.17379392",
+        "repository": "Zenodo"
+      }
+    },
+    "variables": {
+      "count": 47,
+      "dictionary": "variables.csv",
+      "summary": {
+        "road_attributes": 20,
+        "climate_hazards": 24,
+        "derived": 3
+      }
+    },
+    "references": {
+      "data_paper": {
+        "title": "Fused Geospatial Dataset of Road Infrastructure and Climate Hazards for Victoria, Australia",
+        "authors": "Chin et al.",
+        "journal": "Geoscience Data Journal",
+        "year": "2025"
+      },
+      "code_repository": "https://github.com/teckkean/ricraf"
+    },
+    "provenance": {
+      "sources": [
+        {
+          "name": "DataVic - Victoria’s open data platform",
+          "url": "https://www.data.vic.gov.au/",
+          "license": "CC-BY-4.0",
+          "snapshot_date": "2020"
+        },
+        {
+          "name": "Australian Climate Service",
+          "url": "https://www.acs.gov.au/",
+          "license": "Public Domain",
+          "snapshot_date": "2023"
+        }
+      ]
+    },
+    "created": "2025-10-20",
+    "modified": "2025-10-20",
+    "version": "1.0",
+    "conforms_to": [
+      "FAIR principles (Wilkinson et al., 2016)",
+      "Dublin Core",
+      "ISO 19115"
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+﻿Variable Name,Type,Unit,Source ,Description
+OBJECTID_1,Numeric,unitless,DataVic (Traffic Volume Dataset),Internal unique identifier for the record.
+HMGNS_LN_1,String,unitless,DataVic (Traffic Volume Dataset),Homogeneous location link description.
+LGA_SHORT_,String,unitless,DataVic (Traffic Volume Dataset),Abbreviated name of the Local Government Area (LGA) where the data was collected.
+RGN_LONG_N,String,unitless,DataVic (Traffic Volume Dataset),VicRoads Region Name.
+ROAD_NBR,String,unitless,DataVic (Traffic Volume Dataset),VicRoads administrative road classification number.
+DECLARED_R,String,unitless,DataVic (Traffic Volume Dataset),Declared Roads' in the state of Victoria. About 15% of Victorian roads are declared roads and the remaining 85% are local roads.
+LOCAL_ROAD,String,unitless,DataVic (Traffic Volume Dataset),Local Road Name and Road Type.
+RMA_CLSFCN,Categorical,unitless,DataVic (Traffic Volume Dataset),"Road Management Act (2004) Classification Code, where Freeway (including Tollways) shown as ""FW"" and Arterial Roads (i.e. Arterial Highway shown as ""AH"" and Arterial Other shown as ""AO"")."
+SRNS_CD,String,unitless,DataVic (Traffic Volume Dataset),State Road Number Code.
+ALLVEHS_AA,Numeric,vehicles/day,DataVic (Traffic Volume Dataset),"Average annual daily traffic (AADT) for all vehicles, calculated as yearly volume divided by 365."
+TRUCKS_AAD,Numeric,trucks/day,DataVic (Traffic Volume Dataset),"Average annual daily traffic (AADT) for trucks, calculated as yearly volume divided by 365."
+SEAL_WIDTH,Numeric,m,DataVic (Road Width and Number of Lanes Dataset),"Total sealed width, including through traffic lanes and left/right sealed shoulders (in metres)."
+Surface_Ty,Categorical,unitless,DataVic (Pavement Condition Dataset),"Type of road surface material (e.g. Asphalt, Stone Seal, Ultra Thin Asphalt, Concrete, High Friction Surface Treatment, Gravel, Other)."
+HATI_Categ,Categorical,unitless,DataVic (Pavement Condition Dataset),"Heavy Articulated Truck Index (HATI) category, measuring the impact of heavy vehicles on road surface condition."
+Texture__L,Categorical,unitless,DataVic (Pavement Condition Dataset),"Surface texture in the left wheel path, indicating skid resistance and drainage properties."
+Texture__B,Categorical,unitless,DataVic (Pavement Condition Dataset),"Surface texture in the between-wheel path, indicating skid resistance and drainage properties."
+FLOW,String,unitless,DataVic (Traffic Volume Dataset),Direction of traffic flow (e.g. East Bound).
+Roughness_,Categorical,unitless,DataVic (Pavement Condition Dataset),"Categorical measure of road surface roughness based on International Roughness Index (IRI) (e.g. Good: <3.4 IRI, Poor: ≥4.2 IRI)."
+Rutting_Ca,Categorical,unitless,DataVic (Pavement Condition Dataset),"Categorical measure of road surface rutting (e.g. Good: <10 mm, Poor: ≥15 mm)."
+Cracking_C,Categorical,unitless,DataVic (Pavement Condition Dataset),"Categorical measure of road surface cracking (e.g. Good: <10%, Poor: ≥10%)."
+rx5d_gwl-current,Numeric,mm,Australian Climate Service (Hazard Insights Explorer),Highest five-day rainfall total in a year at the current global warming level (GWL) of 1.2°C.
+tn02_gwl-current,Numeric,Days,Australian Climate Service (Hazard Insights Explorer),Average number of days per year with minimum daily temperature ≤2°C (potential frost days) at GWL 1.2°C.
+tx40_gwl-current,Numeric,Days,Australian Climate Service (Hazard Insights Explorer),Average number of days per year with maximum daily temperature ≥40°C at GWL 1.2°C.
+tgm_max_gwl-current,Numeric,°C,Australian Climate Service (Hazard Insights Explorer),Maximum annual average daily mean temperature at GWL 1.2°C.
+tgm_min_gwl-current,Numeric,°C,Australian Climate Service (Hazard Insights Explorer),Minimum annual average daily mean temperature at GWL 1.2°C.
+spi3_gwl-current,Numeric,%,Australian Climate Service (Hazard Insights Explorer),Proportion of time where the 3-month Standardised Precipitation Index (SPI) is ≤-1 at GWL 1.2°C.
+rx5d_gwl-1.5,Numeric,mm,Australian Climate Service (Hazard Insights Explorer),Highest five-day rainfall total in a year at GWL 1.5°C.
+tn02_gwl-1.5,Numeric,Days,Australian Climate Service (Hazard Insights Explorer),Average number of days per year with minimum daily temperature ≤2°C (potential frost days) at GWL 1.5°C.
+tx40_gwl-1.5,Numeric,Days,Australian Climate Service (Hazard Insights Explorer),Average number of days per year with maximum daily temperature ≥40°C at GWL 1.5°C.
+tgm_max_gwl-1.5,Numeric,°C,Australian Climate Service (Hazard Insights Explorer),Maximum annual average daily mean temperature at GWL 1.5°C.
+tgm_min_gwl-1.5,Numeric,°C,Australian Climate Service (Hazard Insights Explorer),Minimum annual average daily mean temperature at GWL 1.5°C.
+spi3_gwl-1.5,Numeric,%,Australian Climate Service (Hazard Insights Explorer),Proportion of time where the 3-month Standardised Precipitation Index (SPI) is ≤-1 at GWL 1.5°C.
+rx5d_gwl-2.0,Numeric,mm,Australian Climate Service (Hazard Insights Explorer),Highest five-day rainfall total in a year at GWL 2.0°C.
+tn02_gwl-2.0,Numeric,Days,Australian Climate Service (Hazard Insights Explorer),Average number of days per year with minimum daily temperature ≤2°C (potential frost days) at GWL 2.0°C.
+tx40_gwl-2.0,Numeric,Days,Australian Climate Service (Hazard Insights Explorer),Average number of days per year with maximum daily temperature ≥40°C at GWL 2.0°C.
+tgm_max_gwl-2.0,Numeric,°C,Australian Climate Service (Hazard Insights Explorer),Maximum annual average daily mean temperature at GWL 2.0°C.
+tgm_min_gwl-2.0,Numeric,°C,Australian Climate Service (Hazard Insights Explorer),Minimum annual average daily mean temperature at GWL 2.0°C.
+spi3_gwl-2.0,Numeric,%,Australian Climate Service (Hazard Insights Explorer),Proportion of time where the 3-month Standardised Precipitation Index (SPI) is ≤-1 at GWL 2.0°C.
+rx5d_gwl-3.0,Numeric,mm,Australian Climate Service (Hazard Insights Explorer),Highest five-day rainfall total in a year at GWL 3.0°C.
+tn02_gwl-3.0,Numeric,Days,Australian Climate Service (Hazard Insights Explorer),Average number of days per year with minimum daily temperature ≤2°C (potential frost days) at GWL 3.0°C.
+tx40_gwl-3.0,Numeric,Days,Australian Climate Service (Hazard Insights Explorer),Average number of days per year with maximum daily temperature ≥40°C at GWL 3.0°C.
+tgm_max_gwl-3.0,Numeric,°C,Australian Climate Service (Hazard Insights Explorer),Maximum annual average daily mean temperature at GWL 3.0°C.
+tgm_min_gwl-3.0,Numeric,°C,Australian Climate Service (Hazard Insights Explorer),Minimum annual average daily mean temperature at GWL 3.0°C.
+spi3_gwl-3.0,Numeric,%,Australian Climate Service (Hazard Insights Explorer),Proportion of time where the 3-month Standardised Precipitation Index (SPI) is ≤-1 at GWL 3.0°C.
+link_length,Numeric,m,Derived,Calculated length of the road link in metres.
+NON_TRUCKS_AADT,Numeric,vehicles/day,Derived,"Average annual daily traffic for non-truck vehicles, computed as ALLVEHS_AA minus TRUCKS_AAD."
+road_link_id,String,unitless,Derived,"Unique identifier for each road link, generated as a concatenation of OBJECTID_1 and a segment index."
+Geometry,Geometry,unitless,Fused dataset,Spatial geometry of the road link as a LineString in GDA94/Vicgrid projection (EPSG:3111).
