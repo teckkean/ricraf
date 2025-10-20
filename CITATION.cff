@@ -8,11 +8,11 @@ authors:
     orcid: "https://orcid.org/0000-0003-1223-6822"
 identifiers:
   - type: doi
-    value: 10.5281/zenodo.17379392
+    value: 10.5281/zenodo.17391486
 repository-code: "https://github.com/teckkean/ricraf"
 license: MIT
 version: "1.0.0"
-date-released: 2025-10-20
+date-released: 2025
 url: "https://github.com/teckkean/ricraf"
 keywords:
   - geospatial dataset
@@ -31,4 +31,4 @@ preferred-citation:
   year: 2025
   journal: "Geoscience Data Journal"
   publisher: "Wiley / Royal Meteorological Society"
-  doi: "10.5281/zenodo.17379392"
+  doi: "10.5281/zenodo.17379391"
