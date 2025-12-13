@@ -1,16 +1,15 @@
 # 🛣️ Road Infrastructure Climate Risk Assessment Framework (RICRAF) 
 
-**RICRAF** — the *Road Infrastructure Climate Risk Assessment Framework* — is an open-source, reproducible workflow for assessing climate-related risks to road networks under current and future global warming levels.  
+**RICRAF** — the *Road Infrastructure Climate Risk Assessment Framework* — is an open-source, reproducible workflow for assessing climate-related risks to road networks under current and future global warming levels. 
 It integrates geospatial data fusion, machine learning, and explainable AI to support data-driven resilience planning.
 
 RICRAF comprises **three research and code stages**, each linked to a corresponding publication:
 
 | Stage | Focus | Journal | Status |
 |--------|--------|----------|--------|
-| **1. Data Fusion** | Creation of the fused geospatial dataset linking road and climate hazard data | *Scientific Data* (under review) | Submitted |
-| **2. Model Development** | Development of the XGBoost–SHAP framework and Climate Risk Formula | *Climate Services* (under review) | Submitted |
-| **3. Model Application** | Application of the framework under multiple Global Warming Levels (GWLs) and traffic scenarios | *Climate Risk Management* (target journal) | To be updated |
-
+| **1. Data Fusion** | Creation of the fused geospatial dataset linking road and climate hazard data | *Scientific Data* | Under review |
+| **2. Model Development** | Development of the XGBoost–SHAP framework and Climate Risk Formula | *Climate Services* | Under review |
+| **3. Model Application** | Application of the framework under multiple Global Warming Levels (GWLs) and traffic scenarios | *Transportation Research Part D: Transport and Environment* | Under review |
 
 ---
 
@@ -24,7 +23,6 @@ The framework:
 - Produces **Climate Risk Scores (CRiskS)** at road link scale to support adaptation and resilience investment planning.
 - Adheres to **FAIR principles** — *Findable, Accessible, Interoperable, Reusable* — through open data, open code, and clear metadata.
 
-
 ---
 
 ## 🔄 Workflow
@@ -32,10 +30,10 @@ The framework:
 ### Stage 1 — Data Fusion
 
 The data fusion workflow integrates:
-- Road datasets from [DataVic](https://www.data.vic.gov.au/) — including traffic volume, pavement condition, and road geometry.
+- Road datasets from [DataVic](https://www.data.vic.gov.au/) — including traffic volume, road surface condition, and road geometry.
 - Climate hazard indices from the [Australian Climate Service](https://www.acs.gov.au/pages/data-explorer) — including precipitation, heat, frost, and drought indicators derived from CMIP6 downscaled models (BARPA & CCAM).
 
-Processing steps include Coordinate Reference System (CRS) standardisation, schema harmonisation, topology checks, spatial joins, and quality validation. 
+Processing steps include Coordinate Reference System (CRS) standardisation, schema harmonisation, topology checks, spatial joins, and quality validation.
 The resulting dataset links 7,579 road segments with climate hazard metrics across **Global Warming Levels (GWLs of 1.2°C, 1.5°C, 2.0°C, 3.0°C)**.
 
 **Outputs:**
@@ -45,7 +43,7 @@ The resulting dataset links 7,579 road segments with climate hazard metrics acro
 
 📘 **Reference:**
 > Chin, T.K., Prakash, M., Zheng, N., & Pauwels, V.R.N. (2025). *Fused Geospatial Dataset Linking Climate Hazards and Road Infrastructure for Victoria, Australia.*  
-> *Scientific Data* (under review). [Zenodo DOI: 10.5281/zenodo.17379391](https://doi.org/10.5281/zenodo.17379391)
+> *Scientific Data* (under review). 
 
 ---
 
@@ -72,14 +70,24 @@ This stage develops the **XGBoost–SHAP framework** for multi-stressor climate 
 > *Climate Services* (under review).
 
 ---
-
 ### Stage 3 — Model Application
 
-This stage will extend the CRF to assess future warming (GWLs 1.5°C to 3.0°C) and evolving traffic exposure scenarios. 
-It will quantify temporal shifts in multi-stressor risks and evaluate the benefits of adaptation measures under projected climate conditions.
+This stage applies the multi-stressor climate risk framework to quantify spatial risk patterns across 23,117 km of Victoria's road network under current climate conditions and projected warming levels up to 3.0°C. It attributes total risk to hazard, exposure, and vulnerability using interpretable Aumann–Shapley decomposition methods, assesses robustness through sensitivity analysis, and identifies emerging network hotspots where interacting stressors amplify climate risk.
 
-*🧭 To be updated after publication.*
+**Key Contributions:**
+- Quantification of risk evolution: Currently, 6.4% of the network exhibits high or extreme risk, driven primarily by vulnerability and hazard. Under 3.0°C warming, high/extreme risk expands to 24.4%, with hazard’s contribution increasing.
+- Inclusion of traffic growth scenarios, showing risk exceeding 55% in metropolitan corridors.
+- Sensitivity tests confirming stable results under ±20% parameter variation.
+- Demonstration of framework scalability and transferability for transport resilience planning through modular, open-source design.
 
+**Outputs:**
+- Climate Risk Scores GeoJSON for multiple scenarios and warming levels.
+- Confusion matrices, statistical evaluations, and sensitivity analyses.
+- Static maps (PNG) and interactive HTML maps (Kepler.gl) for risk visualisation.
+
+📘 **Reference:**
+> Chin, T.K., Prakash, M., Zheng, N., & Pauwels, V.R.N. (2025). *Climate Risk Assessment of Road Infrastructure under Multi-Stressor Conditions in Victoria, Australia.*  
+> *Transportation Research Part D: Transport and Environment* (under review).
 
 ---
 
@@ -98,16 +106,15 @@ ricraf/
 ├── notebooks/
 │   ├── ricraf_data_fusion.ipynb
 │   ├── ricraf_development.ipynb
-│   └── ricraf_application.ipynb  # (to be added)
+│   └── ricraf_application.ipynb
 ├── outputs/
 └── src/
     ├── ricraf_data_fusion.py
-    ├── ricraf_dev.py
-    └── ricraf_app.py  # (to be added)
+    └── ricraf_dev.py
 ```
 
-
 ---
+
 
 ## ⚙️ Installation
 
@@ -118,7 +125,6 @@ python -m venv venv
 source venv/bin/activate   # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
-
 
 ---
 
@@ -151,8 +157,14 @@ data/processed/model_dev/out_crs/
 
 ### 3. Model Application
 
-*To be updated upon publication of the Model Application study.*
-
+Run the application workflow to compute risk scores, generate confusion matrices, and produce maps:
+```bash
+jupyter notebook notebooks/ricraf_application.ipynb
+```
+This notebook applies the framework to current and future scenarios, performs statistical evaluations, and saves outputs to
+```swift
+data/processed/model_app/out_cra/
+```
 
 ---
 
@@ -174,6 +186,10 @@ data/processed/model_dev/out_crs/
 
 If you use this dataset, code, or methodology, please cite:
 
+**Data Descriptor Paper:**
+> Chin, T.K., Prakash, M., Zheng, N., & Pauwels, V.R.N. (2025). Fused Geospatial Dataset Linking Climate Hazards and Road Infrastructure for Victoria, Australia.  
+> *Scientific Data* (under review).
+
 **Dataset (Data Fusion Stage):**
 > Chin, T.K. (2025). *Fused Geospatial Dataset of Road Infrastructure and Climate Hazards for Victoria, Australia.*  
 > Zenodo. [https://doi.org/10.5281/zenodo.17379391](https://doi.org/10.5281/zenodo.17379391)
@@ -186,6 +202,10 @@ If you use this dataset, code, or methodology, please cite:
 > Chin, T.K., Prakash, M., Zheng, N., & Pauwels, V.R.N. (2025). Explainable AI for Multi-Stressor Climate Risk Assessment of Road Networks: An XGBoost–SHAP Framework. \
 > *Climate Services* (under review).
 
+**Model Application Paper:**
+> Chin, T.K., Prakash, M., Zheng, N., & Pauwels, V.R.N. (2025). Climate Risk Assessment of Road Infrastructure under Multi-Stressor Conditions in Victoria, Australia. \
+> *Transportation Research Part D: Transport and Environment* (under review).
+
 For machine-readable citation metadata, please refer to [`CITATION.cff`](CITATION.cff) in this repository.
 
 
@@ -196,7 +216,8 @@ For machine-readable citation metadata, please refer to [`CITATION.cff`](CITATIO
 - **Code:** MIT License — see [`LICENSE`](LICENSE)  
 - **Dataset:** Creative Commons Attribution 4.0 International (CC BY 4.0)
 
-> 🧩 This repository complies with the FAIR data principles and the open-science standards recommended by *Scientific Data* and *Climate Services*.
+> 🧩 This repository complies with the FAIR data principles and the open-science standards recommended by
+> *Scientific Data*, *Climate Services*, and *Transportation Research Part D*.
 
 
 ---
